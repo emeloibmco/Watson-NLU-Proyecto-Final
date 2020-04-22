@@ -1,0 +1,3 @@
+applications:
+  - name: project
+    memory: 256M
