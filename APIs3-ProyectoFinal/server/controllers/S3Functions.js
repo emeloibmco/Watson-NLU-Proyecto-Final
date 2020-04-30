@@ -110,5 +110,16 @@ module.exports = {
         .catch((e) => {
             console.error(`ERROR: ${e.code} - ${e.message}\n`);
         });
+    },
+
+    getfile: function(bucket, key){
+        return s3.getObject({Bucket: `${bucket}`, Key: `${key}`}).promise()
+        .then((data) =>{
+            console.log(`dato obtenido`);
+            return data.Body;
+        })
+        .catch((e) => {
+            console.error(`ERROR: ${e.code} - ${e.message}\n`);
+        });;
     }
 }
